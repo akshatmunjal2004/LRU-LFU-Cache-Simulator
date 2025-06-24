@@ -16,7 +16,6 @@ The simulator models how real-world caching systems manage limited memory by evi
 - Interactive command-line interface for cache operations
 - Implements LRU and LFU caching algorithms from scratch
 - Utilizes `unordered_map` and doubly linked lists for optimal performance
-- Modular C++ codebase with clear separation between interface (`.h`) and implementation (`.cpp`)
 - Automated build system with Makefile for easy compilation on Windows/Linux using MSYS2 or native Linux environments
 
 ---
@@ -35,8 +34,8 @@ The simulator models how real-world caching systems manage limited memory by evi
 | Operation | LRU Cache | LFU Cache |
 |-----------|------------|-----------|
 | Lookup (`get`) | O(1) | O(1) |
-| Insert/Update (`put`) | O(1) | O(1) amortized |
-| Eviction | O(1) | O(1) amortized |
+| Insert/Update (`put`) | O(1) | O(1) |
+| Eviction | O(1) | O(1) |
 
 ---
 
@@ -54,9 +53,9 @@ The simulator models how real-world caching systems manage limited memory by evi
 
 ### Prerequisites
 
-- `g++` compiler with C++11 support
+- `g++` compiler
 - `make` build tool
-- MSYS2 environment on Windows (recommended) or Linux/macOS terminal
+- MSYS2 environment on Windows or Linux/macOS terminal
 
 ### Steps
 

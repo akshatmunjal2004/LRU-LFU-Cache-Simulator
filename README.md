@@ -1,44 +1,73 @@
-# LRU and LFU Cache Simulator
+# LRU & LFU Cache Simulator
 
-## Description
+## Project Overview
 
-A fully interactive command-line simulator that implements two popular caching algorithms:
+This project implements a **Cache Simulator** in C++ featuring two popular cache eviction policies:
 
-- **LRU (Least Recently Used) Cache**
-- **LFU (Least Frequently Used) Cache**
+- **LRU (Least Recently Used)**  
+- **LFU (Least Frequently Used)**
 
-Built entirely in C++ using HashMaps and Doubly Linked Lists, simulating how real-world systems manage memory, cache eviction policies, and storage optimization.
+The simulator models how real-world caching systems manage limited memory by evicting entries based on recency (LRU) or frequency (LFU). It is designed with efficient data structures to provide constant-time cache operations.
+
+---
 
 ## Features
 
-- Add and retrieve keys from cache
-- Simulates eviction on cache overflow
-- CLI-based user interaction
-- Clean modular object-oriented design
-- Fully automated build using Makefile
+- Interactive command-line interface for cache operations
+- Implements LRU and LFU caching algorithms from scratch
+- Utilizes `unordered_map` and doubly linked lists for optimal performance
+- Modular C++ codebase with clear separation between interface (`.h`) and implementation (`.cpp`)
+- Automated build system with Makefile for easy compilation on Windows/Linux using MSYS2 or native Linux environments
+
+---
+
+## Data Structures & Algorithms
+
+- **LRU Cache:**  
+  Uses a HashMap (`unordered_map`) for O(1) key lookup and a doubly linked list to track usage order.  
+- **LFU Cache:**  
+  Uses a combination of HashMaps and frequency lists to maintain usage counts efficiently.
+
+---
+
+## Time Complexities
+
+| Operation | LRU Cache | LFU Cache |
+|-----------|------------|-----------|
+| Lookup (`get`) | O(1) | O(1) |
+| Insert/Update (`put`) | O(1) | O(1) amortized |
+| Eviction | O(1) | O(1) amortized |
+
+---
 
 ## Technologies Used
 
-- C++
-- STL: `unordered_map`, `list`
-- Build Automation: Makefile
-- MSYS2 for Windows compatibility
+- C++11
+- Standard Template Library (STL): `unordered_map`, `list`
+- Makefile build automation
+- MSYS2 for Windows environment compatibility
+- VS Code for development
 
-## Build Instructions
+---
+
+## Build & Run Instructions
 
 ### Prerequisites
 
-- `g++` compiler (C++11 or higher)
-- `make`
+- `g++` compiler with C++11 support
+- `make` build tool
+- MSYS2 environment on Windows (recommended) or Linux/macOS terminal
 
-### Build and Run
+### Steps
 
 ```bash
-# Navigate to project directory
-cd /path/to/Cache-Simulator
+# Clone the repository
+git clone https://github.com/yourusername/Cache-Simulator.git
+cd Cache-Simulator
 
 # Build the project
 make
 
 # Run the simulator
-./simulator.exe
+./simulator.exe      # On Windows (MSYS2)
+./simulator          # On Linux/macOS
